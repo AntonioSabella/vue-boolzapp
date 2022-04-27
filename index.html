@@ -51,7 +51,7 @@
             </div>
             <!-- /.search_chat -->
             <div class="friends_chats">
-                <div class="friend_chat" v-for="(contact, index) in contacts">
+                <div class="friend_chat" v-for="(contact, index) in contacts" :class="active_friend === index ? 'selected' : ''" @click="active_friend = index">
                     <div class="friend_details">
                         <div class="friend_image">
                             <img width="50" :src="'./assets/img/avatar' + contact.avatar +'.jpg'">
@@ -76,10 +76,10 @@
                     <div class="friend_head">
                         <div class="head_details">
                             <div class="head_image">
-                                <img width="40" src="./assets/img/avatar_1.jpg">
+                                <img width="40" :src="'./assets/img/avatar' + contacts[active_friend].avatar+'.jpg'">
                             </div>
                             <div class="head_text"> 
-                               <h4>Michele</h4>
+                               <h4>{{contacts[active_friend].name}}</h4>
                                <p>Ultimo accesso oggi alle <span>12:00</span></p> 
                             </div>
                         </div>
