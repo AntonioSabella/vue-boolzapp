@@ -51,13 +51,13 @@
             </div>
             <!-- /.search_chat -->
             <div class="friends_chats">
-                <div class="friend_chat">
+                <div class="friend_chat" v-for="(contact, index) in contacts">
                     <div class="friend_details">
                         <div class="friend_image">
-                            <img width="50" src="./assets/img/avatar_1.jpg">
+                            <img width="50" :src="'./assets/img/avatar' + contact.avatar +'.jpg'">
                         </div>
                         <div class="friend_text"> 
-                           <h4>Michele</h4>
+                           <h4>{{contact.name}}</h4>
                            <p>Ultimo messaggio inviato</p> 
                         </div>
                     </div>
@@ -98,15 +98,11 @@
             <!-- /.chat_head -->
             <div class="chat_main">
                 <div class="messages_position">
-                    <div class="text_message message_green">
-                            <p>Sono un messaggio</p>
-                            <div>Sono la data del messaggio</div>
+                    <div class="text_message" v-for="text in contacts[active_friend].messages" :class="text.status === 'sent' ? 'message_green' : 'message_white'" >
+                            <p>{{text.message}}</p>
+                            <div>{{text.date}}</div>
                         </div>
                         <!-- /.message -->
-                        <div class="text_message message_white">
-                            <p>Sono un messaggio</p>
-                            <div>Sono la data del messaggio</div>
-                        </div>
                 </div>
                 <!-- /.message_green -->
             </div>

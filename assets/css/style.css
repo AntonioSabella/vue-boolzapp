@@ -74,16 +74,18 @@ body {
 .bell {
     background-color: white;
     border-radius: 50%;
-    padding: 0.7rem 0.5rem;
+    padding: 0.4rem 0.4rem;
     color: rgb(122, 221, 248);
 }
 
 .bell>i {
     transform: translate(0 , -50%);
+    font-size: large;
 }
 
 .notify_text>p {
     font-size: 12px;
+    font-weight: 500;
 }
 
 .notify_text>a {
@@ -124,7 +126,7 @@ body {
 
 .friends_chats {
     width: 100%;
-    height: calc(100% - 174px);
+    height: calc(100% - 170px);
     background-color: white;
     overflow-y: scroll;
 }
@@ -259,6 +261,7 @@ body {
 .text_message>div {
     font-size: 10px;
     color: #babbb3;
+    text-align: right;
 }
 
 /* #endregion chat_main */

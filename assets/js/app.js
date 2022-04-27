@@ -13,6 +13,7 @@ Click sul contatto mostra la conversazione del contatto cliccato
 const app = new Vue ({
     el: '#app',
     data: {
+        active_friend: 0,
         contacts: [
             {
                 name: 'Michele',
@@ -176,5 +177,8 @@ const app = new Vue ({
                 ]
             }
         ],
-    }
+    },
+    methods : {
+        
+    },
 })
