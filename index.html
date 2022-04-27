@@ -5,13 +5,136 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Boolzapp</title>
 </head>
 <body>
     
-    
+    <div class="container" id="app">
+        <div class="col-left">
+            <div class="user-info">
+                <div class="image_name">
+                    <img width="40" src="./assets/img/avatar_io.jpg" alt="">
+                   <div class="user_name">Sofia</div>
+                </div>
+                <!-- /.image_name -->
+                <div class="user_icons">
+                    <i class="fa-solid fa-circle-notch"></i>
+                    <i class="fa-solid fa-message"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <!-- /.user_icons -->
+                
+            </div>
+            <!-- /.user-info -->
+            <div class="notify_new_messages">
+                <div class="bell"><i class="fa-regular fa-bell-slash fa-xl"></i></div>
+                <div class="notify_text">
+                    <p>Ricevi notifiche dei nuovi messaggi</p>
+                    <a href="#">Attiva notifiche desktop</a>
+                </div>
+                <!-- /.notify_text -->
+            </div>
+            <!-- /.notify_new_messages -->
+            <div class="search_chat">
+                <div class="search_bar">
+                    <div class="glass_icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <!-- /.glass_icon -->
+                    
+                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                </div>
+                <!-- /.search-bar -->
+               
+            </div>
+            <!-- /.search_chat -->
+            <div class="friends_chats">
+                <div class="friend_chat">
+                    <div class="friend_details">
+                        <div class="friend_image">
+                            <img width="50" src="./assets/img/avatar_1.jpg">
+                        </div>
+                        <div class="friend_text"> 
+                           <h4>Michele</h4>
+                           <p>Ultimo messaggio inviato</p> 
+                        </div>
+                    </div>
+                    <!-- /.friend_details -->
+                    <div class="last_message">12:00</div>
+                    <!-- /.last_message -->
+                </div>
+                <!-- /.friend_chat -->
+            </div>
+            <!-- /.friends_chat -->
+        </div>
+        <!-- /.col-left -->
+        <div class="col-right">
+            <div class="chat_head">
+                <div class="friend_head_chat">
+                    <div class="friend_head">
+                        <div class="head_details">
+                            <div class="head_image">
+                                <img width="40" src="./assets/img/avatar_1.jpg">
+                            </div>
+                            <div class="head_text"> 
+                               <h4>Michele</h4>
+                               <p>Ultimo accesso oggi alle <span>12:00</span></p> 
+                            </div>
+                        </div>
+                        <!-- /.friend_details -->
+                    </div>
+                    <!-- /.friend_chat -->
+                </div>
+                <!-- /.friend_head_chat -->
+                <div class="icons_head">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-solid fa-paperclip"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <!-- /.icons_head -->
+            </div>
+            <!-- /.chat_head -->
+            <div class="chat_main">
+                <div class="messages_position">
+                    <div class="text_message message_green">
+                            <p>Sono un messaggio</p>
+                            <div>Sono la data del messaggio</div>
+                        </div>
+                        <!-- /.message -->
+                        <div class="text_message message_white">
+                            <p>Sono un messaggio</p>
+                            <div>Sono la data del messaggio</div>
+                        </div>
+                </div>
+                <!-- /.message_green -->
+            </div>
+            <!-- /.chat_main -->
+            <div class="chat_bottom">
+                <div class="send_message">
+                    <div class="icon_left">
+                        <i class="fa-regular fa-face-smile"></i>
+                    </div>
+                    <!-- /.icon_left -->
+                    <div class="send_bar_message">
+                        <input type="text" placeholder="Scrivi un messaggio">
+                    </div>
+                    <!-- /.send_bar_message -->
+                    <div class="icon_right">
+                        <i class="fa-solid fa-microphone"></i>
+                    </div>
+                    <!-- /.icon_right -->
+                </div>
+                <!-- /.send_message -->
+            </div>
+            <!-- /.chat_bottom -->
+        </div>
+        <!-- /.col-right -->
+    </div>
+    <!-- /.container -->
 
+    <script src='https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js'></script>
     <script src="./assets/js/app.js"></script>
 </body>
 </html>
