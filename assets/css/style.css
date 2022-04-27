@@ -237,8 +237,8 @@ body {
     background-color: palegreen;
     z-index: 2;
     border-top-left-radius: 0.8rem;
+    border-top-right-radius: 0.8rem;
     border-bottom-left-radius: 0.8rem;
-    border-bottom-right-radius: 0.8rem;
     text-align: left;
     margin-bottom: 1rem;
     align-self: flex-end;
@@ -248,8 +248,8 @@ body {
 .message_white {
     padding: 0.5rem;
     background-color: white;
-    border-top-left-radius: 0.8rem;
     border-top-right-radius: 0.8rem;
+    border-bottom-left-radius: 0.8rem;
     border-bottom-right-radius: 0.8rem;
     z-index: 2;
     /* border-radius: 0.5rem; */
