@@ -98,8 +98,16 @@
             <!-- /.chat_head -->
             <div class="chat_main">
                 <div class="messages_position">
-                    <div class="text_message" v-for="text in contacts[active_friend].messages" :class="text.status === 'sent' ? 'message_green' : 'message_white'" >
+                    <div class="text_message" v-for="(text, index) in contacts[active_friend].messages" :class="text.status === 'sent' ? 'message_green' : 'message_white'">
                             <p>{{text.message}}</p>
+                            <div class="dropdown_action">
+                                <i class="fa-solid fa-chevron-down" @click="dropdownBox === true ? dropdownBox = false : dropdownBox = true"></i>
+                                <div v-if="dropdownBox" class="dropdown_text">
+                                    <div class="info_drop">Message info</div>
+                                    <div class="delete_drop" @click="deleteSelectedMessage(index)">Delete message</div>
+                                </div>
+                            </div>
+                            <!-- /.dropdown_info -->
                             <div>{{text.date.slice(11, 16)}}</div>
                         </div>
                         <!-- /.message -->
