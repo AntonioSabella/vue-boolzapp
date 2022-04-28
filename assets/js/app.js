@@ -13,6 +13,10 @@ Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitan
 “enter” il testo viene aggiunto al thread sopra, come messaggio verde.
 Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà
 un “ok” come risposta, che apparirà dopo 1 secondo.
+Milestone 4
+Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i
+contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo
+“mar” rimangono solo Marco e Martina)
 */
 
 const app = new Vue ({
@@ -182,29 +186,43 @@ const app = new Vue ({
                 ]
             }
         ],
-        userNewMessage: {
-            date: new Date().toLocaleString([], {hour: '2-digit', minute:'2-digit'}),
+         userNewMessage: {
+            date: new Date().toLocaleString(/* [], {hour: '2-digit', minute:'2-digit'} */), // la elimino poichè, sfruttando slice i messaggi inseriti e quello di risposta non appaiono
             message: '',
             status: 'sent'
         },
-        friendAnswer : {
-            date: new Date().toLocaleString([], {hour: '2-digit', minute:'2-digit'}),
+       friendAnswer : {
+            date: new Date().toLocaleString(/* [], {hour: '2-digit', minute:'2-digit'} */),
             message: "OK",
             status: "received"
         },
+        searchFriendsInput : '',
     },
     methods : {
         myNewMessage() {
             //console.log('messaggio inviato');
             //console.log(this.contacts[this.active_friend].messages);
+            //console.log(this.contacts[this.active_friend]);
             this.contacts[this.active_friend].messages.push(this.userNewMessage);
-            this.contacts[this.active_friend].messages.push(this.friendAnswer);
-            // ricontrollare selezione con il setTimeout() -- perché non funziona la selezione se inserisco la timing function?
+            setTimeout(function(){
+                //console.log(app.contacts[app.active_friend].messages);
+                app.contacts[app.active_friend].messages.push(app.friendAnswer);
+            }, 1000)
             this.userNewMessage = {
-                date: new Date().toLocaleString([], {hour: '2-digit', minute:'2-digit'}),
+                date: new Date().toLocaleString(/* [], {hour: '2-digit', minute:'2-digit'} */),
                 message: '',
                 status: 'sent',
             };
         },
+        searchFriends(contact, index) {
+            const friendName = contact.name.toLowerCase();
+            const searchFriendsInput = this.searchFriendsInput.toLowerCase();
+            if (friendName.includes(searchFriendsInput)) {
+               this.contacts[index].visible = true;
+            } else {
+               this.contacts[index].visible = false;
+            }
+            return this.contacts[index].visible;
+          },
     },
 })

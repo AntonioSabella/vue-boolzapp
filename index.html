@@ -44,14 +44,14 @@
                     <div class="glass_icon"><i class="fa-solid fa-magnifying-glass"></i></div>
                     <!-- /.glass_icon -->
                     
-                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchFriendsInput">
                 </div>
                 <!-- /.search-bar -->
                
             </div>
             <!-- /.search_chat -->
             <div class="friends_chats">
-                <div class="friend_chat" v-for="(contact, index) in contacts" :class="active_friend === index ? 'selected' : ''" @click="active_friend = index">
+                <div class="friend_chat" v-for="(contact, index) in contacts" :class="active_friend === index ? 'selected' : ''" @click="active_friend = index"  v-if="searchFriends(contact, index)">
                     <div class="friend_details">
                         <div class="friend_image">
                             <img width="50" :src="'./assets/img/avatar' + contact.avatar +'.jpg'">
@@ -100,7 +100,7 @@
                 <div class="messages_position">
                     <div class="text_message" v-for="text in contacts[active_friend].messages" :class="text.status === 'sent' ? 'message_green' : 'message_white'" >
                             <p>{{text.message}}</p>
-                            <div>{{text.date}}</div>
+                            <div>{{text.date.slice(11, 16)}}</div>
                         </div>
                         <!-- /.message -->
                 </div>
